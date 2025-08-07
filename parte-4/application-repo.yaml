@@ -16,7 +16,7 @@ spec:
         valueFiles:
           - $values/parte-4/values/values.yaml
     - repoURL: https://github.com/LaloMiranda/argocd-workshop
-      targetRevision: main
+      targetRevision: feat_parte-4
       ref: values
   # syncPolicy:
   #   automated:
