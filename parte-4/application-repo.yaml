@@ -1,22 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx-bitnami
+  name: nginx-repo
   namespace: argocd
 spec:
   project: default
   destination:
     name: in-cluster
-    namespace: nginx-bitnami
+    namespace: nginx-repo
   sources:
     - repoURL: https://charts.bitnami.com/bitnami
       chart: nginx
-      targetRevision: 15.6.0
+      targetRevision: 21.0.8
       helm:
         valueFiles:
           - $values/parte-4/values/values.yaml
     - repoURL: https://github.com/LaloMiranda/argocd-workshop
-      targetRevision: feat_parte-4
+      targetRevision: main
       ref: values
   # syncPolicy:
   #   automated:

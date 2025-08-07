@@ -7,4 +7,4 @@ metadata:
     argocd.argoproj.io/secret-type: repository
 type: Opaque
 stringData:
-  url: https://github.com/LaloMiranda/argocd-workshop
+  url: https://github.com/LaloMiranda/argocd-workshop # LINK to my repo
