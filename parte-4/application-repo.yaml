@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-repo
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    name: in-cluster
+    namespace: nginx-repo
+  sources:
+    - repoURL: https://charts.bitnami.com/bitnami
+      chart: nginx
+      targetRevision: 21.0.8
+      helm:
+        valueFiles:
+          - $values/parte-4/values/values.yaml
+    - repoURL: https://github.com/LaloMiranda/argocd-workshop
+      targetRevision: main
+      ref: values
+  # syncPolicy:
+  #   automated:
+  #     prune: true
+  #     selfHeal: true
