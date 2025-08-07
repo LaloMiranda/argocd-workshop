@@ -25,7 +25,7 @@ minikube start
 ## Instalamos Argo
 ```shell
 kubectl create ns argocd
-helm install argocd argo/argo-cd --version 3.35.4 -n argocd
+helm install argocd argo/argo-cd -n argocd
 ```
 
 ## Obtengo pass de admin
